@@ -44,3 +44,6 @@ TagManager:
   - name: Background
     uniqueID: 2332412537
     locked: 0
+  - name: PointLayer
+    uniqueID: 2599614543
+    locked: 0
