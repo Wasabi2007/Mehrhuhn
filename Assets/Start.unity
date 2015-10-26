@@ -633,15 +633,18 @@ MonoBehaviour:
   - scaling: 1
     points: 25
     spawnChancePerSecond: 1
-    canvas: {fileID: 153312142}
+    canvas: {fileID: 153312143}
+    sortingOrder: 99
   - scaling: 1
     points: 25
     spawnChancePerSecond: 1
-    canvas: {fileID: 833947192}
+    canvas: {fileID: 833947193}
+    sortingOrder: 97
   - scaling: 1
     points: 25
     spawnChancePerSecond: 1
-    canvas: {fileID: 443087062}
+    canvas: {fileID: 443087063}
+    sortingOrder: 95
 --- !u!1 &833947192
 GameObject:
   m_ObjectHideFlags: 0
