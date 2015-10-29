@@ -65,7 +65,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
@@ -85,6 +84,9 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!127 &5
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!1 &60474073
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,19 +634,22 @@ MonoBehaviour:
   layer:
   - scaling: 1
     points: 25
-    spawnChancePerSecond: 1
+    spawnChancePerSecond: .200000003
     canvas: {fileID: 153312143}
     sortingOrder: 99
-  - scaling: 1
-    points: 25
-    spawnChancePerSecond: 1
+    targetHight: {x: 0, y: 3}
+  - scaling: .5
+    points: 50
+    spawnChancePerSecond: .100000001
     canvas: {fileID: 833947193}
     sortingOrder: 97
-  - scaling: 1
-    points: 25
-    spawnChancePerSecond: 1
+    targetHight: {x: 0, y: 3}
+  - scaling: .25
+    points: 100
+    spawnChancePerSecond: .0500000007
     canvas: {fileID: 443087063}
     sortingOrder: 95
+    targetHight: {x: 0, y: 3}
 --- !u!1 &833947192
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &975580407
 Transform:
   m_ObjectHideFlags: 0
@@ -745,6 +750,9 @@ MonoBehaviour:
   points: 100
   speed: 1
   goXPositiv: 1
+  targetHeight: 0
+  maxX: 300
+  lifeTime: -1
 --- !u!61 &975580410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -939,12 +947,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: cbbabe9e292f5604897926494bb38fef, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -1168,7 +1170,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
