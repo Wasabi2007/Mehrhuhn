@@ -10,6 +10,8 @@ public class Mehrhuhn : MonoBehaviour {
 	public float targetHeight = 0;
 
 	public float maxX = 300;
+	public float minX = -100;
+	
 
 	public float lifeTime = -1;
 
@@ -39,7 +41,7 @@ public class Mehrhuhn : MonoBehaviour {
 			rigid2d.position -= Vector2.up * speed * dt;
 		}
 
-		if (rigid2d.position.x > maxX) {
+		if (rigid2d.position.x > maxX || rigid2d.position.x < minX ) {
 			MonoBehaviour.Destroy (this.gameObject);
 		}
 
@@ -49,5 +51,6 @@ public class Mehrhuhn : MonoBehaviour {
 
 	void OnMouseUp(){
 		MonoBehaviour.Destroy (this.gameObject);
+		SendMessageUpwards ("addScore", points);
 	}
 }

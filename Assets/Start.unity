@@ -629,7 +629,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -11.6199999
     y: -5.17000008
-    width: 23.1000004
+    width: 37.7999992
     height: 10.3500004
   layer:
   - scaling: 1
@@ -752,6 +752,7 @@ MonoBehaviour:
   goXPositiv: 1
   targetHeight: 0
   maxX: 300
+  minX: -100
   lifeTime: -1
 --- !u!61 &975580410
 BoxCollider2D:
@@ -1114,6 +1115,7 @@ GameObject:
   - 92: {fileID: 1624818246}
   - 124: {fileID: 1624818245}
   - 81: {fileID: 1624818244}
+  - 114: {fileID: 1624818249}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1187,6 +1189,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1624818249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1624818243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71179f4fc905d47fea0b9fd868646ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: {fileID: 738431402}
+  cam: {fileID: 1624818247}
 --- !u!1 &1797141492
 GameObject:
   m_ObjectHideFlags: 0

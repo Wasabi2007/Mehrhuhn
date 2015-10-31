@@ -61,6 +61,7 @@ public class Spawner : MonoBehaviour {
 				mehrhuhn.goXPositiv = direction > 0f;
 				mehrhuhn.points = spawn.points;
 				mehrhuhn.maxX = transform.position.x + LevelSize.width;
+				mehrhuhn.minX = transform.position.x + LevelSize.x - 3;
 
 
 				//out of screen spawn
