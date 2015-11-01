@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D),typeof(BoxCollider2D))]
 public class Mehrhuhn : MonoBehaviour {
@@ -14,6 +15,8 @@ public class Mehrhuhn : MonoBehaviour {
 	
 
 	public float lifeTime = -1;
+
+	public GameObject pointIndicator;
 
 	private float xDirection = 1;
 
@@ -52,5 +55,14 @@ public class Mehrhuhn : MonoBehaviour {
 	void OnMouseUp(){
 		MonoBehaviour.Destroy (this.gameObject);
 		SendMessageUpwards ("addScore", points);
+
+		if (!pointIndicator)
+			return;
+
+		GameObject go = (GameObject)GameObject.Instantiate(pointIndicator, transform.position, Quaternion.identity);
+		Text text = go.GetComponent<Text> ();
+		text.text = "+" + points;
+		go.transform.SetParent(transform.parent.parent);
+		go.SetActive (true);
 	}
 }

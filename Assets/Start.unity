@@ -1117,6 +1117,7 @@ MonoBehaviour:
   maxX: 300
   minX: -100
   lifeTime: -1
+  pointIndicator: {fileID: 1171314086}
 --- !u!61 &975580410
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1371,13 +1372,15 @@ GameObject:
   - 222: {fileID: 1171314090}
   - 114: {fileID: 1171314089}
   - 223: {fileID: 1171314088}
+  - 114: {fileID: 1171314092}
+  - 114: {fileID: 1171314091}
   m_Layer: 0
   m_Name: PointPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1171314087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1411,7 +1414,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingLayerID: -1695352753
-  m_SortingOrder: -1
+  m_SortingOrder: 1000
 --- !u!114 &1171314089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,6 +1447,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1171314086}
+--- !u!114 &1171314091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171314086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1347817507220a4384f3ff6f7c24546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUnitsPerSecond:
+    value: {x: 0, y: 1, z: 0}
+    space: 1
+  rotateDegreesPerSecond:
+    value: {x: 0, y: 0, z: 0}
+    space: 1
+  ignoreTimescale: 0
+--- !u!114 &1171314092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171314086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37fac21d1f093d344816942d1abce94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TimeOut: 3
+  m_DetachChildren: 0
 --- !u!1 &1572773654
 GameObject:
   m_ObjectHideFlags: 0

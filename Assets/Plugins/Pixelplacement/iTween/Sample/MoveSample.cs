@@ -4,7 +4,7 @@ using System.Collections;
 public class MoveSample : MonoBehaviour
 {	
 	void Start(){
-		iTween.MoveBy(gameObject, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
+		iTween.MoveAdd(gameObject,Vector3.up*3,5);// iTween.Hash("y", 2, "easeType", "liniar", "loopType", "none"));
 	}
 }
 
