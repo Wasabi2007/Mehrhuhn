@@ -725,15 +725,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22488988, guid: 81154777d5417884981849c5243f6c01, type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22488988, guid: 81154777d5417884981849c5243f6c01, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22488988, guid: 81154777d5417884981849c5243f6c01, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 50
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 22488988, guid: 81154777d5417884981849c5243f6c01, type: 2}
       propertyPath: m_RootOrder
@@ -936,6 +936,7 @@ GameObject:
   - 4: {fileID: 738431401}
   - 114: {fileID: 738431402}
   - 114: {fileID: 738431403}
+  - 114: {fileID: 738431404}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -975,9 +976,9 @@ MonoBehaviour:
   cam: {fileID: 1624818247}
   LevelSize:
     serializedVersion: 2
-    x: -11.6199999
+    x: -27.2099991
     y: -5.17000008
-    width: 37.7999992
+    width: 63.5
     height: 10.3500004
   layer:
   - scaling: 1
@@ -1011,6 +1012,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scorelabel: {fileID: 1884291680}
   score: 0
+--- !u!114 &738431404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 738431400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e5fbc7d5b34434cb49aa02babac4e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxMunition: 7
+  currentMunition: 7
+  reloadTime: 2
+  munitionState: 1
 --- !u!1 &833947192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1790,6 +1806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: {fileID: 738431402}
   cam: {fileID: 1624818247}
+  speed: 10
 --- !u!1 &1797141492
 GameObject:
   m_ObjectHideFlags: 0

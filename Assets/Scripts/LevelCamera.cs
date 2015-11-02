@@ -5,6 +5,7 @@ public class LevelCamera : MonoBehaviour {
 
 	public Spawner level;
 	public Camera cam;
+	public float speed = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +21,9 @@ public class LevelCamera : MonoBehaviour {
 		var orthographicSizeHorizontal = cam.orthographicSize * cam.aspect;
 
 		if(viewMouse.x < 0.1f){
-			camPos -= Vector3.right*dt;
+			camPos -= Vector3.right*dt*speed;
 		}else if(viewMouse.x > 0.9f){
-			camPos += Vector3.right*dt;
+			camPos += Vector3.right*dt*speed;
 		}
 
 		if (camPos.x > level.transform.position.x + level.LevelSize.x+orthographicSizeHorizontal

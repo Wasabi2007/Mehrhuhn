@@ -21,11 +21,14 @@ public class Mehrhuhn : MonoBehaviour {
 	private float xDirection = 1;
 
 	private Rigidbody2D rigid2d;
+	private Munition m;
 
 	// Use this for initialization
 	void Start () {
 		rigid2d = GetComponent<Rigidbody2D> ();
 		rigid2d.isKinematic = true;
+
+		m = GetComponentInParent<Munition> ();
 
 		xDirection = (goXPositiv ? 1 : -1);
 	}
@@ -53,6 +56,9 @@ public class Mehrhuhn : MonoBehaviour {
 	}
 
 	void OnMouseUp(){
+		if (!m.munitionState)
+			return;
+
 		MonoBehaviour.Destroy (this.gameObject);
 		SendMessageUpwards ("addScore", points);
 
