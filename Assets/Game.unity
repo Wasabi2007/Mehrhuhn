@@ -1152,19 +1152,19 @@ MonoBehaviour:
   layer:
   - scaling: 1
     points: 25
-    spawnChancePerSecond: .200000003
+    spawnChancePerSecond: .400000006
     canvas: {fileID: 153312143}
     sortingOrder: 99
     targetHight: {x: 0, y: 3}
   - scaling: .5
     points: 50
-    spawnChancePerSecond: .100000001
+    spawnChancePerSecond: .200000003
     canvas: {fileID: 833947193}
     sortingOrder: 97
     targetHight: {x: 0, y: 3}
   - scaling: .25
     points: 100
-    spawnChancePerSecond: .0500000007
+    spawnChancePerSecond: .100000001
     canvas: {fileID: 443087063}
     sortingOrder: 95
     targetHight: {x: 0, y: 3}
