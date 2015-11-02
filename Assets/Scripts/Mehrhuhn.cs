@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine.Cloud.Analytics;
 
 [RequireComponent(typeof(Rigidbody2D),typeof(BoxCollider2D))]
 public class Mehrhuhn : MonoBehaviour {
@@ -61,6 +63,11 @@ public class Mehrhuhn : MonoBehaviour {
 
 		MonoBehaviour.Destroy (this.gameObject);
 		SendMessageUpwards ("addScore", points);
+
+		UnityAnalytics.CustomEvent("mehrhuhn_death", new Dictionary<string, object>
+		{
+			{ "points", points }
+		});
 
 		if (!pointIndicator)
 			return;
