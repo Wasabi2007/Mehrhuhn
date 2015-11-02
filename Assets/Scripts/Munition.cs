@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Munition : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class Munition : MonoBehaviour {
 
 	private float munitionUsedTime;
 	public bool munitionState = true;
+	public Text label;
 
 	// Use this for initialization
 	void Start () {
@@ -34,13 +36,14 @@ public class Munition : MonoBehaviour {
 		}
 
 
-		if (Input.GetMouseButtonDown (2) && munitionState) {
+		if (Input.GetMouseButtonDown (1) && munitionState) {
 			currentMunition = 0;
 			munitionUsedTime = Time.time;
 			munitionState = false;
 			//Debug.Log("reloading");				
 		}
 
+		label.text = Mathf.Max (0, currentMunition) + "/" + maxMunition + (!munitionState?" R":"");
 	
 	}
 
