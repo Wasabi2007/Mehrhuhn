@@ -19,6 +19,10 @@ public class Score : MonoBehaviour {
 	
 	}
 
+	void OnDestroy(){
+		PlayerPrefs.SetInt ("Score", score);
+	}
+
 	void addScore(int toadd){
 		score += toadd;
 		Scorelabel.text = string.Format("{0}",score);
