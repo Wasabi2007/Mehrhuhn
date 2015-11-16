@@ -22,3 +22,6 @@ sysinfo.txt
 
 # Windows
 [Tt]thumps.db
+
+# Project Specific
+*_log.xml

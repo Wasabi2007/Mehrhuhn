@@ -64,10 +64,17 @@ public class Mehrhuhn : MonoBehaviour {
 		MonoBehaviour.Destroy (this.gameObject);
 		SendMessageUpwards ("addScore", points);
 
-		UnityAnalytics.CustomEvent("mehrhuhn_death", new Dictionary<string, object>
+		/*UnityAnalytics.CustomEvent("mehrhuhn_death", new Dictionary<string, object>
 		{
 			{ "points", points }
-		});
+		});*/
+
+		var logger = Eventlogger.getInstance();
+		logger.StartEvent("mehrhuhn_death");
+		logger.Writer.WriteElementString("points",points.ToString());
+		logger.Writer.WriteElementString("direction",(goXPositiv?"rigth":"left"));
+		logger.WritePositon(transform.position);
+		logger.EndEvent();
 
 		if (!pointIndicator)
 			return;
