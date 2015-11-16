@@ -31,6 +31,9 @@ public class Munition : MonoBehaviour {
 			if(currentMunition < 0){
 				munitionUsedTime = Time.time;
 				munitionState = false;
+				var logger = Eventlogger.getInstance();
+				logger.StartEvent("relode_lmb");
+				logger.EndEvent();
 				//Debug.Log("reloading");				
 			}
 		}
@@ -40,7 +43,11 @@ public class Munition : MonoBehaviour {
 			currentMunition = 0;
 			munitionUsedTime = Time.time;
 			munitionState = false;
-			//Debug.Log("reloading");				
+			//Debug.Log("reloading");
+			var logger = Eventlogger.getInstance();
+			logger.StartEvent("relode_rmb");
+			logger.Writer.WriteElementString("currentMunition",currentMunition.ToString());
+			logger.EndEvent();
 		}
 
 		label.text = Mathf.Max (0, currentMunition) + "/" + maxMunition + (!munitionState?" R":"");

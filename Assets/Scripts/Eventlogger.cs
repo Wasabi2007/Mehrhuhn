@@ -15,6 +15,7 @@ using UnityEngine;
 public class Eventlogger : MonoBehaviour
 {
 	private static Eventlogger instance = null;
+	private bool levelOpend = false;
 	private XmlWriter writer;
 	public XmlWriter Writer{
 		get{ return writer;}
@@ -25,7 +26,7 @@ public class Eventlogger : MonoBehaviour
         XmlWriterSettings xmlWriterSettings = new XmlWriterSettings();
         xmlWriterSettings.NewLineOnAttributes = true;
         xmlWriterSettings.Indent = true;
-        writer = XmlWriter.Create(DateTime.Now.Ticks + "_Mehuhn_log.xml", xmlWriterSettings);
+        writer = XmlWriter.Create(DateTime.Now.Ticks + "_Mehruhn_log.xml", xmlWriterSettings);
         writer.WriteStartDocument();
 
         GameObject.DontDestroyOnLoad(gameObject);
@@ -33,8 +34,9 @@ public class Eventlogger : MonoBehaviour
 
 	void OnDestroy ()
 	{
+		EndLevel ();
 		writer.WriteEndDocument();
-        writer.Close();
+		writer.Close();
 	}
 
 	public static Eventlogger getInstance(){
@@ -56,10 +58,23 @@ public class Eventlogger : MonoBehaviour
 
 	public void WritePositon(Vector3 pos){
 		writer.WriteStartElement("Position");
-		writer.WriteElementString("x",pos.x.ToString());
-        writer.WriteElementString("y", pos.y.ToString());
-        writer.WriteElementString("z", pos.z.ToString());
+			writer.WriteElementString("x", pos.x.ToString());
+	        writer.WriteElementString("y", pos.y.ToString());
+	        writer.WriteElementString("z", pos.z.ToString());
 		writer.WriteEndElement();
+	}
+
+	public void BeginLevel(String name){
+		writer.WriteStartElement("Level");
+		writer.WriteAttributeString ("name", name);
+		levelOpend = true;
+	}
+
+	public void EndLevel(){
+		if (levelOpend) {
+			levelOpend = false;
+			writer.WriteEndElement ();
+		}
 	}
 }
 

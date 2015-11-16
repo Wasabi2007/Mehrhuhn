@@ -30,6 +30,11 @@ public class LevelCamera : MonoBehaviour {
 		    && camPos.x < level.LevelSize.width / 2 + level.transform.position.x-orthographicSizeHorizontal) {
 			cam.transform.position = camPos;
 		}
+
+		var logger = Eventlogger.getInstance();
+		logger.StartEvent("camPos");
+		logger.WritePositon (cam.transform.position);
+		logger.EndEvent();
 	
 	}
 }

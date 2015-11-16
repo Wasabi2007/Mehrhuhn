@@ -33,6 +33,13 @@ public class Mehrhuhn : MonoBehaviour {
 		m = GetComponentInParent<Munition> ();
 
 		xDirection = (goXPositiv ? 1 : -1);
+
+		var logger = Eventlogger.getInstance();
+		logger.StartEvent("mehrhuhn_spawn");
+		logger.Writer.WriteElementString("points",points.ToString());
+		logger.Writer.WriteElementString("direction",(goXPositiv?"rigth":"left"));
+		logger.WritePositon(transform.position);
+		logger.EndEvent();
 	}
 	
 	// Update is called once per frame

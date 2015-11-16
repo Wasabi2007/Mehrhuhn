@@ -21,11 +21,33 @@ public class Spawner : MonoBehaviour {
 	public Spawninfo[] layer;
 
 	private float spawntick = 0;
+	private Eventlogger log;
 
 
 	// Use this for initialization
-	void Start () {
-	
+	void Awake () {
+		log = Eventlogger.getInstance ();
+		log.BeginLevel ("A");
+		log.Writer.WriteStartElement("Settings");
+			log.Writer.WriteStartElement("SpawnLayers");
+			foreach(var l in layer){
+				log.Writer.WriteStartElement("SpawnLayer");
+					log.Writer.WriteElementString ("scaling",l.scaling.ToString());
+					log.Writer.WriteElementString ("points",l.points.ToString());
+					log.Writer.WriteElementString ("SpawnChance",l.spawnChancePerSecond.ToString());
+
+					log.Writer.WriteStartElement("targetHight");
+					log.Writer.WriteElementString ("y1",l.targetHight.x.ToString());
+					log.Writer.WriteElementString ("y2",l.targetHight.y.ToString());
+					log.Writer.WriteEndElement();
+
+				log.Writer.WriteEndElement();
+			}
+			log.Writer.WriteEndElement();
+		log.Writer.WriteEndElement();
+	}
+	void OnDestroy(){
+		log.EndLevel ();
 	}
 	
 	// Update is called once per frame
